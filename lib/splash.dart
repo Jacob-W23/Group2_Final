@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:group2final/main.dart';
+import 'main.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -28,7 +28,7 @@ class _SplashState extends State<Splash> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/reel.jpg'),
+            Image.asset('assets/launch_image.jpg'),
             CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
             )
