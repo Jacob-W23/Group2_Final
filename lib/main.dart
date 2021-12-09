@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+import 'package:group2final/showMovies.dart';
+import 'package:group2final/splash.dart';
+import 'package:group2final/showTVShows.dart';
+=======
+>>>>>>> 10b129d2d0a292fb21ad2ef8bb73409e4c364c78
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+<<<<<<< HEAD
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Entertainment Tracker',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Splash(),
+=======
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -23,6 +39,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+>>>>>>> 10b129d2d0a292fb21ad2ef8bb73409e4c364c78
     );
   }
 }
@@ -30,6 +47,8 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
 
+<<<<<<< HEAD
+=======
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
@@ -39,6 +58,7 @@ class MyHomePage extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
+>>>>>>> 10b129d2d0a292fb21ad2ef8bb73409e4c364c78
   final String title;
 
   @override
@@ -46,6 +66,50 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+<<<<<<< HEAD
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/space.jpg'), fit: BoxFit.cover),
+            ),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ShowMovies()));
+                      },
+                      child: Text("Movies"),
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: Size(200, 40),
+                          primary: Colors.purple,
+                          textStyle: TextStyle(fontSize: 28))),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ShowTVShows()));
+                      },
+                      child: Text("TV Shows"),
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: Size(200, 40),
+                          primary: Colors.red,
+                          textStyle: TextStyle(fontSize: 28)))
+                ],
+              ),
+            )));
+=======
   int _counter = 0;
 
   void _incrementCounter() {
@@ -109,5 +173,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+>>>>>>> 10b129d2d0a292fb21ad2ef8bb73409e4c364c78
   }
 }

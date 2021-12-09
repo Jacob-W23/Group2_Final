@@ -75,3 +75,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+<<<<<<< HEAD
+
+  assets:
+  - assets/space.jpg
+  - assets/reel.jpg
+=======
+>>>>>>> 10b129d2d0a292fb21ad2ef8bb73409e4c364c78
