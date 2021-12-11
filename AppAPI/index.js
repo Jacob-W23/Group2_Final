@@ -43,6 +43,7 @@ const Checkout = mongoose.model('Checkout');
 app.post('/addMovie', async(req, res)=>{
     try{
         let movie = {
+            moviePoster: req.body.moviePoster,
             movieName: req.body.movieName,
             movieDescription: req.body.movieDescription,
         }

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:group2final/Models/Checkout.dart';
+import 'package:group2final/Models/Wishlist.dart';
 import 'movies.dart';
 import 'splash.dart';
 import 'tvShows.dart';
+import 'wishList.dart';
+import 'checkOut.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,25 +50,70 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Movies()));
-                      },
-                      child: Text("Movies"),
-                      style: ElevatedButton.styleFrom(
-                          minimumSize: Size(200, 40),
-                          primary: Colors.purple,
-                          textStyle: TextStyle(fontSize: 28))),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Movies('id', 'moviePoster',
+                              'movieName', 'movieDescription'),
+                        ),
+                      );
+                    },
+                    child: Text("Movies"),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(200, 40),
+                      primary: Colors.purple,
+                      textStyle: TextStyle(fontSize: 28),
+                    ),
+                  ),
                   ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => TVShows()));
-                      },
-                      child: Text("TV Shows"),
-                      style: ElevatedButton.styleFrom(
-                          minimumSize: Size(200, 40),
-                          primary: Colors.red,
-                          textStyle: TextStyle(fontSize: 28)))
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TVShows(),
+                        ),
+                      );
+                    },
+                    child: Text("TV Shows"),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(200, 40),
+                      primary: Colors.red,
+                      textStyle: TextStyle(fontSize: 28),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WishList(),
+                        ),
+                      );
+                    },
+                    child: Text("Wish List"),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(200, 40),
+                      primary: Colors.green,
+                      textStyle: TextStyle(fontSize: 28),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CheckOut(),
+                        ),
+                      );
+                    },
+                    child: Text("Checkout"),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(200, 40),
+                      primary: Colors.yellow,
+                      textStyle: TextStyle(fontSize: 28),
+                    ),
+                  ),
                 ],
               ),
             )));

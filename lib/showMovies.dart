@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'movies.dart';
 
 class ShowMovies extends StatefulWidget {
   const ShowMovies({Key? key}) : super(key: key);
@@ -8,13 +9,15 @@ class ShowMovies extends StatefulWidget {
 }
 
 class _ShowMoviesState extends State<ShowMovies> {
+  bool loaded = false;
+  List movies = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Movies"),
+        title: Text("Show Movies"),
       ),
-      body: Container(),
+      body: Center(),
     );
   }
 }
