@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:group2final/showMovies.dart';
 import 'main.dart';
 import 'AppAPI.dart';
 
@@ -57,18 +58,39 @@ class _MoviesState extends State<Movies> {
                                           movieParam['movieDescription'],
                                         ))),
                           },
-                          child: ListTile(
-                            leading: Image.network(
-                              movieParam['moviePoster'],
-                              width: 120.0,
-                              height: 600.0,
-                              fit: BoxFit.fill,
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
+                            margin: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              border:
+                                  Border.all(width: 1, color: Colors.purple),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
                             ),
-                            title: Text(
-                              (movieParam['movieName']),
-                              style: TextStyle(fontSize: 20),
+                            child: ListTile(
+                              leading: Image.network(
+                                movieParam['moviePoster'],
+                                width: 120.0,
+                                height: 600.0,
+                                fit: BoxFit.fill,
+                              ),
+                              title: Text(
+                                (movieParam['movieName']),
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              subtitle: Text(movieParam['movieDescription']),
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => ShowMovies(
+                                        movieParam['moviePoster'],
+                                        movieParam['movieName'],
+                                        movieParam['movieDescription']),
+                                  ),
+                                );
+                              },
                             ),
-                            subtitle: Text(movieParam['movieDescription']),
                           ),
                         ),
                       ),
