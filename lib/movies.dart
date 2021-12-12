@@ -50,7 +50,7 @@ class _MoviesState extends State<Movies> {
                                   const EdgeInsets.symmetric(vertical: 0.0),
                               child: TextButton(
                                 onPressed: () => {
-                                  //Navigator.pop(context),
+                                  Navigator.pop(context),
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(

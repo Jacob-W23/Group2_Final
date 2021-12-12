@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   );
                 },
-                child: Text("Movies1"),
+                child: Text("Movies"),
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(200, 40),
                   primary: Colors.purple,
