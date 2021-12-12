@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Shows = new Schema({
+    showPoster:{
+        type: String,
+        required: true
+    },
     showName: 
     {
         type: String,
