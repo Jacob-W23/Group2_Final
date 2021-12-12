@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Wishlist = new Schema({
+    wishlistPoster:{
+        type: String,
+        required: true
+    },
     wishlistItem: 
     {
         type: String,

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:group2final/Models/Checkout.dart';
-import 'package:group2final/Models/Wishlist.dart';
 import 'movies.dart';
 import 'splash.dart';
 import 'tvShows.dart';

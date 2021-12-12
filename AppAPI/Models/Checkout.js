@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Checkout = new Schema({
+    checkoutPoster:{
+        type: String,
+        required: true
+    },
     checkoutItem: 
     {
         type: String,
