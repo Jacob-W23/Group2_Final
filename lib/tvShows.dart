@@ -24,8 +24,10 @@ class _TVShowsState extends State<TVShows> {
     super.initState();
 
     widget.api.getShows().then((data) {
-      tvshows = data;
-      loaded = true;
+      setState(() {
+        tvshows = data;
+        loaded = true;
+      });
     });
   }
 
@@ -80,7 +82,7 @@ class _TVShowsState extends State<TVShows> {
                                       style: TextStyle(fontSize: 20),
                                     ),
                                     subtitle:
-                                        Text(showParam['movieDescription']),
+                                        Text(showParam['showDescription']),
                                     onTap: () {
                                       Navigator.of(context).push(
                                         MaterialPageRoute(
