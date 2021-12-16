@@ -69,7 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => TVShows(),
+                      builder: (context) =>
+                          TVShows('showPoster', 'showName', 'showDescription'),
                     ),
                   );
                 },
@@ -85,7 +86,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => WishList(),
+                      builder: (context) => WishList(
+                          'wishlistPoster', 'wishlistItem', 'itemDescription'),
                     ),
                   );
                 },

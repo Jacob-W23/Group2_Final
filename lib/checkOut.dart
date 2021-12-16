@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class CheckOut extends StatefulWidget {
-  const CheckOut({Key? key}) : super(key: key);
-
   @override
   _CheckOutState createState() => _CheckOutState();
 }
