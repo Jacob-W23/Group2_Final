@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'tvShows.dart';
+import 'AppAPI.dart';
 
 class ShowTVShows extends StatefulWidget {
-  final String showParam;
+  final String showPoster;
   final String showName;
   final String showDescription;
-  const ShowTVShows(this.showParam, this.showName, this.showDescription);
+  final AppAPI api = new AppAPI();
+  ShowTVShows(this.showPoster, this.showName, this.showDescription);
 
   @override
   _ShowTVShowsState createState() =>
-      _ShowTVShowsState(this.showParam, this.showName, this.showDescription);
+      _ShowTVShowsState(this.showPoster, this.showName, this.showDescription);
 }
 
 class _ShowTVShowsState extends State<ShowTVShows> {
-  String showParam, showName, showDescription;
-  _ShowTVShowsState(this.showParam, this.showName, this.showDescription);
+  String showPoster, showName, showDescription;
+  _ShowTVShowsState(this.showPoster, this.showName, this.showDescription);
   bool loaded = false;
   List shows = [];
   @override
@@ -34,13 +35,13 @@ class _ShowTVShowsState extends State<ShowTVShows> {
           ),
           Center(
             child: Image.network(
-              showParam,
+              showPoster,
               height: 500,
               alignment: Alignment.center,
             ),
           ),
           Text(showDescription),
-          ElevatedButton(onPressed: null, child: Text("Add to wishlist"))
+          ElevatedButton(onPressed: ()=> widget.api.addItemToWishlist(showPoster, showName, showDescription), child: Text("Add to wishlist"))
         ],
       ),
     );

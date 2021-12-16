@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'movies.dart';
+import "AppAPI.dart";
 
 class ShowMovies extends StatefulWidget {
-  final String moviesParam;
+  final String moviePoster;
   final String movieName;
   final String movieDescription;
-  const ShowMovies(this.moviesParam, this.movieName, this.movieDescription);
+  final AppAPI api = new AppAPI();
+  ShowMovies(this.moviePoster, this.movieName, this.movieDescription);
 
   @override
   _ShowMoviesState createState() =>
-      _ShowMoviesState(this.moviesParam, this.movieName, this.movieDescription);
+      _ShowMoviesState(this.moviePoster, this.movieName, this.movieDescription);
 }
 
 class _ShowMoviesState extends State<ShowMovies> {
-  String moviesParam, movieName, movieDescription;
-  _ShowMoviesState(this.moviesParam, this.movieName, this.movieDescription);
+  String moviePoster, movieName, movieDescription;
+  _ShowMoviesState(this.moviePoster, this.movieName, this.movieDescription);
   bool loaded = false;
   List movies = [];
   @override
@@ -34,13 +35,13 @@ class _ShowMoviesState extends State<ShowMovies> {
           ),
           Center(
             child: Image.network(
-              moviesParam,
+              moviePoster,
               height: 500,
               alignment: Alignment.center,
             ),
           ),
           Text(movieDescription),
-          ElevatedButton(onPressed: null, child: Text("Add to wishlist"))
+          ElevatedButton(onPressed: ()=> widget.api.addItemToWishlist(moviePoster, movieName, movieDescription), child: Text("Add to wishlist"))
         ],
       ),
     );
