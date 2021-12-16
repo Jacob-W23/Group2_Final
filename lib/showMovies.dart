@@ -40,6 +40,7 @@ class _ShowMoviesState extends State<ShowMovies> {
             ),
           ),
           Text(movieDescription),
+          ElevatedButton(onPressed: null, child: Text("Add to wishlist"))
         ],
       ),
     );

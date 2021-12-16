@@ -116,6 +116,17 @@ class _MoviesState extends State<Movies> {
                 ],
               ),
             ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () => {
+          Navigator.pop(context),
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      MyHomePage(title: "Entertainment Tracker")))
+        },
+      ),
     );
   }
 }
