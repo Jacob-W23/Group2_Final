@@ -16,7 +16,7 @@ class AppAPI {
   //Show Route
 
   //Get all shows
-  Future<List> getAllShows() async {
+  Future<List> getShows() async {
     final response = await _dio.get('/getAllShows');
     return response.data['Shows'];
   }
@@ -30,8 +30,8 @@ class AppAPI {
   }
 
   //Add item to wishlist
-  Future addItemToWishlist(String itemName) async {
-    final response = await _dio.post('/addWishlistItem', data: {'wishlistItem': itemName});
+  Future addItemToWishlist(String itemPoster,String itemName,String itemDescription) async {
+    final response = await _dio.post('/addWishlistItem', data: {'wishlistPoster':itemPoster,'wishlistItem': itemName,'itemDescription':itemDescription});
   }
 
   //Delete item from wishlist
@@ -48,8 +48,8 @@ class AppAPI {
   }
 
   //Add item to checkout
-  Future addItemToCheckout(String itemName) async {
-    final response = await _dio.post('/addCheckoutItem', data: {'checkoutItem': itemName});
+  Future addItemToCheckout(String itemPoster,String itemName,String itemDescription) async {
+    final response = await _dio.post('/addCheckoutItem', data: {'checkoutPoster':itemPoster,'checkoutItem': itemName,'checkoutDescription':itemDescription});
   }
 
   //Delete item from check out

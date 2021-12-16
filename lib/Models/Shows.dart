@@ -1,6 +1,6 @@
 class Shows {
   final String id;
-    final String showPoster;
+  final String showPoster;
   final String showName;
   final String showDescription;
 

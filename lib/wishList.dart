@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:group2final/showWishlist.dart';
+import 'showWishlist.dart';
 import "main.dart";
 import "AppAPI.dart";
 
