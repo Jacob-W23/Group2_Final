@@ -99,8 +99,9 @@ app.post('/deleteMovie', async (req,res)=>{
 app.post('/addShow', async(req, res)=>{
     try{
         let show = {
+            showPoster: req.body.showPoster,
             showName: req.body.showName,
-            showDescription: req.body.showDescription,
+            showDescription: req.body.showDescription
         }
     
     await Shows(show).save().then(c =>{
@@ -154,8 +155,9 @@ app.post('/deleteShow', async (req,res)=>{
 app.post('/addWishlistItem', async(req, res)=>{
     try{
         let item = {
+            wishlistPoster: req.body.wishlistPoster,
             wishlistItem: req.body.wishlistItem,
-            itemDescription: req.body.itemDescription,
+            itemDescription: req.body.itemDescription
         }
     
     await Wishlist(item).save().then(c =>{
@@ -209,8 +211,9 @@ app.post('/deleteWishlistItem', async (req,res)=>{
 app.post('/addCheckoutItem', async(req, res)=>{
     try{
         let item = {
+            checkoutPoster: req.body.checkoutPoster,
             checkoutItem: req.body.checkoutItem,
-            checkoutDescription: req.body.checkoutDescription,
+            checkoutDescription: req.body.checkoutDescription
         }
     
     await Checkout(item).save().then(c =>{

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:group2final/showTVShows.dart';
+import 'showTVShows.dart';
 import "main.dart";
 import "AppAPI.dart";
 
@@ -23,7 +23,7 @@ class _TVShowsState extends State<TVShows> {
   void initState() {
     super.initState();
 
-    widget.api.getAllShows().then((data) {
+    widget.api.getShows().then((data) {
       tvshows = data;
       loaded = true;
     });
