@@ -31,6 +31,24 @@ class _WishListState extends State<WishList> {
     });
   }
 
+  void _displayItems() {
+    widget.api.getWishlist().then((data) {
+      setState(() {
+        wishes = data;
+        loaded = true;
+      });
+    });
+  }
+
+  void _deleteItem(name) {
+    setState(() {
+      Navigator.pop(context);
+      widget.api.deleteWishlistItem(name);
+      Icon(Icons.refresh);
+      _displayItems();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,29 +89,36 @@ class _WishListState extends State<WishList> {
                                     ),
                                   ),
                                   child: ListTile(
-                                    leading: Image.network(
-                                      wishParam['wishlistPoster'],
-                                      width: 120.0,
-                                      height: 600.0,
-                                      fit: BoxFit.fill,
-                                    ),
-                                    title: Text(
-                                      (wishParam['wishlistItem']),
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                    subtitle:
-                                        Text(wishParam['itemDescription']),
-                                    onTap: () {
-                                      Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (context) => ShowWishlist(
-                                              wishParam['wishlistPoster'],
-                                              wishParam['wishlistItem'],
-                                              wishParam['itemDescription']),
+                                      leading: Image.network(
+                                        wishParam['wishlistPoster'],
+                                        width: 120.0,
+                                        height: 600.0,
+                                        fit: BoxFit.fill,
+                                      ),
+                                      title: Text(
+                                        (wishParam['wishlistItem']),
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      subtitle:
+                                          Text(wishParam['itemDescription']),
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) => ShowWishlist(
+                                                wishParam['wishlistPoster'],
+                                                wishParam['wishlistItem'],
+                                                wishParam['itemDescription']),
+                                          ),
+                                        );
+                                      },
+                                      trailing: IconButton(
+                                        icon: Icon(
+                                          Icons.delete,
+                                          color: Colors.red,
                                         ),
-                                      );
-                                    },
-                                  ),
+                                        onPressed: () => _deleteItem(
+                                            wishParam['wishlistItem']),
+                                      )),
                                 ),
                               ),
                             ),

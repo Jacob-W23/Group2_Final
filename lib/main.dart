@@ -103,7 +103,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CheckOut(),
+                      builder: (context) => CheckOut('checkoutPoster',
+                          'checkoutItem', 'checkoutDescription'),
                     ),
                   );
                 },
