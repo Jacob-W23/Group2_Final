@@ -18,17 +18,18 @@ class _ShowWishlistState extends State<ShowWishlist> {
   String wishlistPoster;
   String wishlistItem;
   String itemDescription;
-  _ShowWishlistState(this.wishlistPoster, this.wishlistItem, this.itemDescription);
+  _ShowWishlistState(
+      this.wishlistPoster, this.wishlistItem, this.itemDescription);
   bool loaded = false;
   List wishes = [];
 
-  void _deleteItem(name) {
-    setState(() {
-      Navigator.pop(context);
-      widget.api.deleteWishlistItem(name);
-      Navigator.pop(context);
-    });
-  }
+  // void _deleteItem(name) {
+  //   setState(() {
+  //     Navigator.pop(context);
+  //     widget.api.deleteWishlistItem(name);
+  //     Navigator.pop(context);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,11 @@ class _ShowWishlistState extends State<ShowWishlist> {
             ),
           ),
           Text(itemDescription),
-          ElevatedButton(onPressed: ()=> _deleteItem(wishlistItem), child: Text("Remove from wishlist"))
+          ElevatedButton(
+            onPressed: () => widget.api.addItemToCheckout(
+                wishlistPoster, wishlistItem, itemDescription),
+            child: Text('Add to Cart'),
+          ),
         ],
       ),
     );
