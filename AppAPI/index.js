@@ -6,7 +6,7 @@ app.use(express.json());
 //MongoDB Package
 const mongoose = require('mongoose');
 
-const PORT = 1250;
+const PORT = 1200;
 
 const dbUrl = "mongodb+srv://admin:Passw0rd@cluster0.vpu9l.mongodb.net/G2Final?retryWrites=true&w=majority";
 
